@@ -1,20 +1,24 @@
+
 package id.ac.upb.asetpinjam.minggu01;
 
 import id.ac.upb.asetpinjam.config.Varian;
 import java.util.function.Function;
 
-/** Minggu 1, gaya FUNGSIONAL: fungsi sebagai nilai (lambda), tanpa state yang berubah. */
+/**
+ * Minggu 1, gaya FUNGSIONAL:
+ * fungsi sebagai nilai (lambda), tanpa state yang berubah.
+ */
 public final class HelloFungsional {
 
     private HelloFungsional() {
     }
 
     /**
-     * TODO minggu 1: kembalikan fungsi yang menerima NAMA dan menghasilkan sapaan
-     * yang memuat "Aset-Pinjam", nama tersebut, dan NIM yang diberikan. Gunakan lambda.
+     * Mengembalikan fungsi yang menerima NAMA dan menghasilkan sapaan.
      */
     public static Function<String, String> pembuatSapaan(String nim) {
-        throw new UnsupportedOperationException("TODO minggu 1: HelloFungsional.pembuatSapaan");
+        return nama -> "Halo, " + nama
+                + "! Selamat datang di Aset-Pinjam. NIM: " + nim;
     }
 
     public static void main(String[] args) {
