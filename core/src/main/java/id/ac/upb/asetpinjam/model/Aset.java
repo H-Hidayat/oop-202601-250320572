@@ -12,7 +12,7 @@ import id.ac.upb.asetpinjam.config.Varian;
  * Minggu 4: hitungDenda() dioverride di tiap subclass.
  * Minggu 5: bisaDipinjam() dan class abstrak.
  */
-public class Aset implements DapatDipinjam {
+public abstract class Aset implements DapatDipinjam {
 
     // Field private (encapsulation)
     private final String kode;
@@ -92,13 +92,12 @@ public class Aset implements DapatDipinjam {
     /** Implementasi minggu 5. */
     @Override
     public boolean bisaDipinjam() {
-        throw new UnsupportedOperationException("TODO minggu 5");
+        return status == StatusAset.TERSEDIA
+                && kondisi != Kondisi.RUSAK_BERAT;
     }
 
     /** Implementasi minggu 3. */
-    public JenisAset getJenis() {
-        throw new UnsupportedOperationException("TODO minggu 3");
-    }
+    public abstract JenisAset getJenis();
 
     /**
      * Menghitung denda keterlambatan.
